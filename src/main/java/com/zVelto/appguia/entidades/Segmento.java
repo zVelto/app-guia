@@ -3,19 +3,28 @@ package com.zVelto.appguia.entidades;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tab_seguimentos")
 public class Segmento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@Column(name = "SEG_CODIGO")
 	private Integer codigo;
+	@Column(name = "SEG_DESCRICAO")
 	private String descricao;
+	@Column(name = "SEG_USR_CADASTRO")
 	private Integer cadastro;
+	@Column(name = "SEG_DT_CADASTRO")
 	private Date dataDeCadastro;
+	@Column(name = "SEG_USR_ATT")
 	private Integer atualizacao;
+	@Column(name = "SEG_DT_ATT")
 	private Date dataDeAtualizacao;
 	
 	public Segmento() {
