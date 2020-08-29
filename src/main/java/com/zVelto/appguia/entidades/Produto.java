@@ -22,7 +22,6 @@ public class Produto implements Serializable{
 	}
 
 	public Produto(Integer codigo, String descricao, Double preco, Date dataDeCadastro, Date dataDeAtualizacao) {
-		super();
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.preco = preco;
