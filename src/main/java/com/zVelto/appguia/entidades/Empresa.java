@@ -3,6 +3,7 @@ package com.zVelto.appguia.entidades;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,23 +14,41 @@ public class Empresa implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@Column(name = "EMP_CODIGO")
 	private Integer codigo;
+	@Column(name = "EMP_NOME")
 	private String nome;
+	@Column(name = "EMP_CNPJ")
 	private String cnpj;
+	@Column(name = "EMP_EMAIL")
 	private String email;
+	@Column(name = "EMP_TELEFONE")
 	private String telefone1;
+	@Column(name = "EMP_TELEFONE1")
 	private String telefone2;
+	@Column(name = "EMP_TELEFONE2")
 	private String telefone3;
+	@Column(name = "EMP_RUA")
 	private String rua;
+	@Column(name = "EMP_NUMERO")
 	private String numero;
+	@Column(name = "EMP_COMPLEMENTO")
 	private String complemento;
+	@Column(name = "EMP_BAIRRO")
 	private String bairro;
+	@Column(name = "EMP_CIDADE")
 	private String cidade;
+	@Column(name = "EMP_UF")
 	private String uf;
+	@Column(name = "EMP_CEP")
 	private String cep;
+	@Column(name = "EMP_USR_CADASTRO")
 	private Integer cadastro;
+	@Column(name = "EMP_DT_CADASTRO")
 	private Date dataDeCadastro;
+	@Column(name = "EMP_USR_ATT")
 	private Integer atualizacao;
+	@Column(name = "EMP_DT_ATT")
 	private Date dataDeAtualizacao;
 	
 	public Empresa() {

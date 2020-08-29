@@ -3,32 +3,54 @@ package com.zVelto.appguia.entidades;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tab_usuarios")
 public class Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@Column(name = "USR_CODIGO")
 	private Integer codigo;
+	@Column(name = "USR_NOME")
 	private String nome;
+	@Column(name = "USR_CPF")
 	private String cpf;
+	@Column(name = "USR_LOGIN")
 	private String login;
+	@Column(name = "USR_SENHA")
 	private String senha;
+	@Column(name = "USR_TELEFONE")
 	private String telefone1;
+	@Column(name = "USR_TELEFONE1")
 	private String telefone2;
+	@Column(name = "USR_TELEFONE2")
 	private String telefone3;
+	@Column(name = "USR_RUA")
 	private String rua;
+	@Column(name = "USR_NUMERO")
 	private String numero;
+	@Column(name = "USR_COMPLEMENTO")
 	private String complemento;
+	@Column(name = "USR_BAIRRO")
 	private String bairro;
+	@Column(name = "USR_CIDADE")
 	private String cidade;
+	@Column(name = "USR_UF")
 	private String uf;
+	@Column(name = "USR_CEP")
 	private String cep;
+	@Column(name = "USR_USR_CADASTRO")
 	private Integer cadastro;
+	@Column(name = "USR_DT_CADASTRO")
 	private Date dataDeCadastro;
+	@Column(name = "USR_USR_ATT")
 	private Integer atualizacao;
+	@Column(name = "USR_DT_ATT")
 	private Date dataDeAtualizacao;
 	
 	
