@@ -4,16 +4,23 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zVelto.appguia.entidades.Usuario;
+import com.zVelto.appguia.repositorios.RepositorioDeUsuario;
 
 @RestController
 @RequestMapping(value = "/usuarios")
 public class RecursoDeUsuario {
+	
+	@Autowired
+	private RepositorioDeUsuario usuarioDAO;
 	
 	@GetMapping
 	public ResponseEntity<Usuario> findAll() throws ParseException {
@@ -23,6 +30,12 @@ public class RecursoDeUsuario {
 		
 		Usuario user = new Usuario(2548, "Zé", "555.222.666-99", "zezin", "12564", "55544447", "98878987", "44556688", "Rua: cervo do pantanal", "5654", null, "Clube de Campo", "Santo André", "SP", "05879-444", 2589, d1, 5654, d2);
 		
+		return ResponseEntity.ok().body(user);
+	}
+	
+	@PostMapping
+	public ResponseEntity<Usuario> salvarEmpresa(@RequestBody Usuario user) {
+		usuarioDAO.save(user);
 		return ResponseEntity.ok().body(user);
 	}
 
